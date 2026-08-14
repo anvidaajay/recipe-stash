@@ -1,0 +1,13 @@
+from django.urls import path
+from .views import (
+    RecipeListCreateView,
+    RecipeDetailView,
+    RegisterView,
+)
+
+
+urlpatterns = [
+    path("", RecipeListCreateView.as_view(), name="recipe-list-create"),
+    path("<int:pk>/", RecipeDetailView.as_view(), name="recipe-detail"),
+    path("register/", RegisterView.as_view(), name="register"),
+]
